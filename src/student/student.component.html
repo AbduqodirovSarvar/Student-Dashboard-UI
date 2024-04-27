@@ -1,0 +1,60 @@
+<div class="body">
+  <div class="main">
+    <div class="main_header">
+      <form class="search-field" [formGroup]="studentAppForms" action="#">
+        <mat-form-field class="search-field">
+          <mat-label>Search</mat-label>
+          <input type="search" formControlName="searchText" name="search" matInput placeholder="Name">
+        </mat-form-field>
+      </form>
+      <button mat-stroked-button (click)="openAddStudentDialog()" class="add-button">Add</button>
+    </div>
+    <div class="student_table">
+      <table mat-table [dataSource]="data" class="mat-elevation-z8">
+        <ng-container matColumnDef="photo">
+          <th mat-header-cell *matHeaderCellDef>Photo</th>
+          <td mat-cell *matCellDef="let element">
+            <img src="{{ element.photo }}" alt="{{student's photo}}" class="student-photo">
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="fullname">
+          <th mat-header-cell *matHeaderCellDef>Full Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.fullname}} </td>
+        </ng-container>
+        <ng-container matColumnDef="age">
+          <th mat-header-cell *matHeaderCellDef>Age</th>
+          <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+        </ng-container>
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef>Gender</th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+        <ng-container matColumnDef="createdTime">
+          <th mat-header-cell *matHeaderCellDef>Created Time</th>
+          <td mat-cell *matCellDef="let element"> {{ element.createdAt}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="openEditStudentDialog(element.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteStudent(element.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      </table>
+    </div>
+    <mat-paginator [formGroup]="studentAppForms" [length]="length"
+              [pageSizeOptions]="[5, 10, 20, 50]"
+              aria-label="Select page" (page)="pagingChange($event)">
+    </mat-paginator>
+  </div>
+</div>

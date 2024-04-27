@@ -1,0 +1,12 @@
+[
+  {"id": 1, "fullname": "John Doe", "age": 18, "gender": "male"},
+  {"id": 2, "fullname": "Alice Smith", "age": 20, "gender": "female"},
+  {"id": 3, "fullname": "Michael Johnson", "age": 19, "gender": "male"},
+  {"id": 4, "fullname": "Emily Brown", "age": 21, "gender": "female"},
+  {"id": 5, "fullname": "David Lee", "age": 22, "gender": "male"},
+  {"id": 6, "fullname": "Sarah Williams", "age": 20, "gender": "female"},
+  {"id": 7, "fullname": "James Wilson", "age": 19, "gender": "male"},
+  {"id": 8, "fullname": "Jessica Taylor", "age": 18, "gender": "female"},
+  {"id": 9, "fullname": "Matthew Anderson", "age": 21, "gender": "male"},
+  {"id": 10, "fullname": "Emma Martinez", "age": 22, "gender": "female"}
+]
